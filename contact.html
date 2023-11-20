@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content='width=634'>
+    <meta name=viewport content='user-scalable=no'>
+    <title>contact form</title>
+    
+    <style>
+        *{margin: 0;
+          padding: 0;}
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(29, 20, 107);
+    font-family: sans-serif;
+    color: #fff;
+
+    border-width: 1rem;
+    border-color: rgb(85, 85, 6);
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    margin: 0.6rem;
+}
+html{
+    font-size: 62.5%;
+}
+header{
+    background-color: rgb(9, 10, 10);
+}
+nav{
+   display: flex;
+}
+.logo{
+   display: flex;
+   align-items: center;
+}
+.logo img{
+   width: 9rem;
+   padding: 0 4.5rem;
+}
+nav ul {
+   height: 9rem;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+nav ul li{
+    list-style: none;
+    padding: 0 3.3rem;
+    font-size: 2.9rem;
+} 
+nav ul li a{
+    color: white;
+    text-decoration: none;
+} 
+nav ul li a:hover{
+    font-weight: bolder;
+}
+.sixth{
+        text-align: center;
+        font-size: 2.3rem; 
+        margin: 2rem;
+}
+.sixth button{
+    background: rgb(26, 141, 41);
+    color: #fff;
+    border: 0;
+    padding: 1.5rem 5rem;
+    border-radius: 5rem;
+    font-family: poppins;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+.sixth button:hover{
+    font-weight: bolder;
+}
+.contact-title{
+    margin-top: 6.6rem;
+    columns: #fff;
+    text-transform: uppercase;
+    transition: all 4s ease-in;
+}
+.contact-title h1{
+    font-size: 3.2rem;
+    line-height: 6.2rem;
+
+}
+.contact-title h2{
+    font-size: 2rem;
+}
+form{
+    margin-top: 4.5rem;
+    margin-bottom: 3rem;
+    transition: all 4s ease-in-out;
+}
+.form-control{
+    width: 60rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+}
+input{
+    height: 4.5rem;
+}
+form .submit{
+    background: #ff5722;
+    border-color: transparent;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    height: 5rem;
+    margin-top: 2rem;
+}
+form .submit:hover{
+    background-color: #f44336;
+    cursor: pointer;
+}
+.flex-all-center{
+    height: 7vh;
+    background: rgb(28, 29, 31);
+    color: white;
+    margin-top: 2rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+@media(max-width:998px) {
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width:768px) {
+    html{
+        font-size: 45%;
+    }
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="unnamed.png" alt="">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="sixth">
+                    <a href="tracker.html"><big><button> CLICK HERE FOR TRACKER </button></big></a>
+                  </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact-title">
+        <h1>"In case of any queries and doubts, please write to us".</h1>
+        <h2>we are always here to serve you</h2>
+    </div>
+
+    <div class="contact_form">
+        <form id="contact-form" method="post" action="contact.php">
+            <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+            <br>
+            <input name="email" type="email" class="form-control" placeholder="Your Email" required>
+            <br>
+            <textarea name="message" class="form-control" placeholder="Message" rows="4" required></textarea>
+            <br>
+            <input type="submit" class="form-control submit" value="SEND MESSAGE">
+        </form>
+    </div>
+
+
+    <footer  class="flex-all-center">
+        <p>&copy; DATA TREKKERS 2023, ETA</p>
+    </footer>
+
+</body>
+</html>

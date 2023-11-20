@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget Tracker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: lightblue;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+
+            border-width: 0.6rem;
+            border-color: rgb(85, 85, 6);
+            border-style: solid;
+            border-radius: 1rem;
+            padding: 0.3rem;
+            margin: 0.6rem;
+        }
+
+        #header {
+            background-color: #080808;
+            color: #fff;
+            padding: -10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        #header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 25px;
+            margin-left: 70px; 
+            margin-top: 22px;
+            float: left;   
+        }
+
+        #header a:hover{
+    font-weight: bolder;
+} 
+
+        #container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #summary {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        #logo {
+            max-width: 80px;
+            height: auto;
+            /* margin-bottom: 20px; */
+            float: left;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img src="unnamed.png" alt="Logo" id="logo" >
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div id="container">
+        <h1>Personal Budget Tracker</h1>
+
+        <form id="budgetForm">
+            <label for="income">Income:</label>
+            <input type="number" id="income" placeholder="Enter income" required>
+
+            <label for="category">Expense Category:</label>
+            <input type="text" id="category" placeholder="Enter category" required>
+
+            <label for="expense">Expense Amount:</label>
+            <input type="number" id="expense" placeholder="Enter expense amount" required>
+
+            <button type="button" onclick="addIncome()">Add Income</button>
+            <button type="button" onclick="addExpense()">Add Expense</button>
+        </form>
+
+        <div id="summary">
+            <h2>Budget Summary</h2>
+            <p id="incomeDisplay">Income: $0</p>
+            <p id="expensesDisplay">Expenses: $0</p>
+            <p id="remainingBudget">Remaining Budget: $0</p>
+        </div>
+    </div>
+
+    <script>
+        let income = 0;
+        let expenses = 0;
+
+        function addIncome() {
+            const incomeInput = document.getElementById('income');
+            const incomeAmount = parseFloat(incomeInput.value);
+            income += incomeAmount;
+            updateSummary();
+        }
+
+        function addExpense() {
+            const categoryInput = document.getElementById('category');
+            const expenseInput = document.getElementById('expense');
+
+            const category = categoryInput.value;
+            const expenseAmount = parseFloat(expenseInput.value);
+
+            expenses += expenseAmount;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const incomeDisplay = document.getElementById('incomeDisplay');
+            const expensesDisplay = document.getElementById('expensesDisplay');
+            const remainingBudget = document.getElementById('remainingBudget');
+
+            incomeDisplay.textContent = `Income: $${income}`;
+            expensesDisplay.textContent = `Expenses: $${expenses}`;
+            remainingBudget.textContent = `Remaining Budget: $${income - expenses}`;
+        }
+    </script>
+</body>
+</html>
